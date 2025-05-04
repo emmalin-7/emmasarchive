@@ -1,36 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>my archive</title>
-  <style>
+    <meta charset="UTF-8" />
 
-    @font-face {
-      font-family: 'handwriting';
-      src: url('handwriting.ttf') format('truetype');
-    }
+    <title>my archive</title>
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-      background: #111;
-      color: white;
-      font-family: 'handwriting';
-    }
+    <style>
 
-    .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    }
-  </style>
+        @font-face {
+            font-family: 'handwriting';
+            src: url('handwriting.ttf') format('truetype');
+        }
+
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: white;
+            font-family: 'handwriting';
+            min-height: 100vh;
+        }
+
+        .welcome-wrapper {
+            height: calc(100vh - 48px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome {
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .topnav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: #111;
+            backdrop-filter: blur(6px);
+            padding: 1rem 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+
+        .topnav nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .topnav a {
+            font-size: 17px;
+            color: #f2f2f2;
+            text-decoration: none;
+            text-transform: lowercase;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .topnav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .topnav a:hover {
+            color: #909799;
+        }
+
+        .topnav a:hover::after {
+            width: 100%;
+        }
+
+        .topnav a.active {
+            color: #6cceff;
+        }
+
+        .content {
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+
+    </style>
+
 </head>
 <body>
-  <div class="overlay">welcome to my archive!</div>
+    
+    <div class="topnav">
+        <nav>
+            <a class="active" href="#home">home</a>
+            <a href="tableofcontents.html">table of contents</a>
+            <a href="me.html">me</a>
+        </nav>
+    </div>
+
+
+    <section class="welcome-wrapper">
+        <div class="welcome">welcome to my archive!</div>
+    </section>
+    
+    <section class="content">
+        <p>testing scroll element </p>
+        <p>testing scroll element </p>
+        <p>testing scroll element </p>
+        <p>testing scroll element </p>
+    </section>
+
 </body>
 </html>
+
